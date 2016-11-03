@@ -1,0 +1,26 @@
+package com.jpa.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import javax.persistence.EntityManagerFactory;
+
+import com.jpa.core.BaseService;
+import com.jpa.entity.$name;
+import com.jpa.repository.${name}Repository;
+@Service
+public class ${name}Service extends BaseService<${name}> {
+	    private ${name}Repository ${lowername}Repository;
+	    @Autowired
+	    public void setDAO(EntityManagerFactory emf, ${name}Repository ${lowername}Repository){
+			this.emf = emf;
+			this.baseDAO =  ${lowername}Repository;
+			this.${lowername}Repository =  ${lowername}Repository;
+		}
+	    
+		public Page<${name}> vagueSelect(String keyword,Pageable page){
+			Page<${name}> saveAndFlush = ${lowername}Repository.vagueSelect(keyword, page);
+			return saveAndFlush;
+		}
+}

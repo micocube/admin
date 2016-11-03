@@ -1,0 +1,22 @@
+#set( $iAmVariable = "good!" )
+Welcome $name to velocity.com
+today is $date.
+#foreach ($i in $list)
+$i
+#end
+$iAmVariable
+
+#if(1==1)
+...
+#elseif(1<2)
+... 1=1
+#else
+...
+#end
+
+ #foreach($param in ${paramValues.keySet()})  
+    <tr>  
+        <th>$param</th>  
+        <td>${paramValues.get($param)}</td>  
+   </tr>  
+  #end  
